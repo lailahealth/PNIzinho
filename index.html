@@ -6,47 +6,110 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PNIzinho Laila</title>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script src="js/index.js"></script>
 </head>
 
 <body>
 
-  <h2>Registro de Vacina - Coronavírus</h2>
-  <form action="https://formsubmit.co/projetolaila@gmail.com" method="POST">
+  <div class="container">
+    <h4>Registro de Vacina - Coronavírus</h4>
+    <form class="col s12" action="https://formsubmit.co/projetolaila@gmail.com" method="POST">
 
-    <input type="hidden" name="_next" value="https://lailahealth.github.io/PNIzinho/sucesso.html"><br>
+      <input type="hidden" name="_next" value="https://lailahealth.github.io/PNIzinho/sucesso.html">
 
-    <label for="cpf">CPF:</label><br>
-    <input type="text" id="cpf" name="CPF"><br>
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" id="cpf" name="CPF" required>
+          <label for="cpf">CPF:</label>
+        </div>
+      </div>
 
-    <label for="sus">Cartão do SUS:</label><br>
-    <input type="text" id="sus" name="Cartão do SUS"><br>
+      <div class="row">
 
-    <label for="tipo_vacina">Tipo de Vacina:</label><br>
-    <input type="text" id="tipo_vacina" name="Tipo de Vacina"><br><br>
+        <div class="input-field col s12">
+          <input type="text" id="sus" name="Cartão do SUS" required>
+          <label for="sus">Cartão do SUS:</label>
+        </div>
 
-    <span>Tipo de Dose</span><br>
+      </div>
 
-    <input type="radio" id="d1" name="Tipo de Dose" value="d1">
-    <label for="d1">D1</label><br>
-    <input type="radio" id="d2" name="Tipo de Dose" value="d2">
-    <label for="d2">D2</label><br>
-    <input type="radio" id="reforço" name="Tipo de Dose" value="reforço">
-    <label for="reforço">Reforço</label> <br><br>
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" id="tipo_vacina" name="Tipo de Vacina" required>
+          <label for="tipo_vacina">Tipo de Vacina:</label>
+        </div>
 
-    <label for="lote_vacina">Lote da Vacina:</label><br>
-    <input type="text" id="lote_vacina" name="Lote da Vacina"><br>
+      </div>
 
-    <label for="estabelecimento">Estabelecimento:</label><br>
-    <input type="text" id="estabelecimento" name="Estabelecimento"><br>
 
-    <label for="data">Data:</label><br>
-    <input type="date" id="data" name="Data"><br>
+      <div class="row">
+        <span>Tipo de Dose</span>
 
-    <label for="vacinador">Vacinador:</label><br>
-    <input type="text" id="vacinador" name="Vacinador"><br><br>
+        <p>
+          <label>
+            <input type="radio" id="d1" name="Tipo de Dose" value="d1" required>
+            <span>D1</span>
+          </label>
+        </p>
 
-    <input type="submit" value="Submit">
-  </form>
+        <p>
+          <label>
+            <input type="radio" id="d2" name="Tipo de Dose" value="d2">
+            <span>D2</span>
+          </label>
+        </p>
+
+        <p>
+          <label>
+            <input type="radio" id="reforço" name="Tipo de Dose" value="reforço">
+            <span>Reforço</span>
+          </label>
+        </p>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" id="lote_vacina" name="Lote da Vacina" required>
+          <label for="lote_vacina">Lote da Vacina:</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" id="estabelecimento" name="Estabelecimento" required>
+          <label for="estabelecimento">Estabelecimento:</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input class="datepicker" type="text" id="data" name="Data" required>
+          <label for="data">Data:</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" id="vacinador" name="Vacinador" required>
+          <label for="vacinador">Vacinador:</label>
+        </div>
+
+      </div>
+
+      <button class="btn waves-effect waves-light" type="submit" value="Submit">Enviar
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+  </div>
 </body>
 
 </html>
