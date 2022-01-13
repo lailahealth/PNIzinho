@@ -1,3 +1,17 @@
+function formatCPF() {
+  const cpfInput = document.getElementById("cpf");
+
+  cpfInput.value = cpfInput.value
+    .replace(/[^\d]/g, "")
+    .replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+}
+
+function formatCNS() {
+  const susInput = document.getElementById("sus");
+
+  susInput.value = susInput.value.replace(/[^\d]/g, "");
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   var datepicker_pt_br = {
     today: "Hoje",
