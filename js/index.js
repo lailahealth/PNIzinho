@@ -1,3 +1,10 @@
+// const config = require("./config.js");
+
+const config = {
+  "37bc98b7-178c-46c2-be0d-f06d8eacf90e": "projetolaila@gmail.com",
+  "a255fa5a-5c59-4aec-8254-ed0dfc22a490": "semus.penalva@hotmail.com",
+};
+
 function formatCPF() {
   const cpfInput = document.getElementById("cpf");
 
@@ -59,16 +66,42 @@ document.addEventListener("DOMContentLoaded", function () {
       "Dezembro",
     ],
   };
-  var options = {
+
+  var datePickerOptions = {
     container: "body",
     showDaysInNextAndPreviousMonths: true,
     i18n: datepicker_pt_br,
     //outras configurações
   };
 
-  var elems = document.querySelectorAll(".datepicker");
-  M.Datepicker.init(elems, options);
+  var datePickers = document.querySelectorAll(".datepicker");
+  M.Datepicker.init(datePickers, datePickerOptions);
 
   var selects = document.querySelectorAll("select");
   M.FormSelect.init(selects);
+
+  const params = new URLSearchParams(document.location.search.substring(1));
+  const uuid = params.get("id");
+
+  if (!uuid) {
+    window.location.href = "https://lailahealth.github.io/PNIzinho/401.html";
+
+    return;
+  }
+
+  const emailToSend = config[uuid];
+
+  if (!emailToSend) {
+    window.location.href = "https://lailahealth.github.io/PNIzinho/401.html";
+
+    return;
+  }
+
+  const $h5Tag = document.getElementsByTagName("h5")[0];
+
+  $h5Tag.append(`Email: ${emailToSend}`);
+
+  const $form = document.getElementsByTagName("form")[0];
+
+  $form.action = `https://formsubmit.co/${emailToSend}`;
 });
