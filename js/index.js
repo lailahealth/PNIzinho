@@ -67,5 +67,8 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   var elems = document.querySelectorAll(".datepicker");
-  var instances = M.Datepicker.init(elems, options);
+  M.Datepicker.init(elems, options);
+
+  var selects = document.querySelectorAll("select");
+  M.FormSelect.init(selects);
 });
