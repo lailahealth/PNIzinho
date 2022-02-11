@@ -98,10 +98,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const $h5Tag = document.getElementsByTagName("h5")[0];
+  const $form = document.getElementsByTagName("form")[0];
+  const $nextInput = document.getElementsByName("_next")[0];
 
   $h5Tag.append(`Email: ${emailToSend}`);
-
-  const $form = document.getElementsByTagName("form")[0];
-
   $form.action = `https://formsubmit.co/${emailToSend}`;
+  $nextInput.value = `https://lailahealth.github.io/PNIzinho/sucesso.html?id=${uuid}`;
 });
